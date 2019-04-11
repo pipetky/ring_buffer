@@ -20,7 +20,7 @@ public class Main {
 
 for (int n: n_ops){
     for(int p = 1; p < p_max + 1; p++) {
-        int average_p = 0;
+        int summ_p = 0;
         for (int c = 0; c < test_count; c++) {
 
 
@@ -49,14 +49,14 @@ for (int n: n_ops){
             }
             int aver = summ / p;
 
-            average_p += aver;
+            summ_p += aver;
         }
 
         String filename = Integer.toString(n) + ".txt";
         try{
 
             PrintWriter printWriter = new PrintWriter(new FileOutputStream(new File(filename),true));
-            printWriter.write(p + " " + Integer.toString(average_p/test_count) + "\n");
+            printWriter.write(p + " " + Integer.toString(summ_p/test_count) + "\n");
             printWriter.close();
         }
         catch (java.io.IOException e ){
